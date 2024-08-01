@@ -1,3 +1,3 @@
-# wistia-api-search
+# Wistia API Search
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/allanwhite/wistia-api-search)
+This project is a quick exploration to build a search tool using [Wistia's API](https://docs.wistia.com/reference). It was scaffolded with Tailwind and ChatGPT. 

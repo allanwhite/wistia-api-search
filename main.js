@@ -1,4 +1,5 @@
 import './style.css'
+const apiKey = `Bearer ${import.meta.env.VITE_WISTIA_TOKEN}`; // read-only key
 let currentPage = 1;
 const perPage = 200;
 let totalPages = 1;
@@ -7,8 +8,7 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    authorization:
-      'Bearer 890cdb2c15686f657574ad83cdd6febc2bb22488cc6eb8b8faa1f297d5d8b4ae',
+    authorization: apiKey,
   },
 };
 
