@@ -29,11 +29,17 @@ const formatDate = (dateString) => {
   return `${year}-${month}-${day}`;
 };
 
-const updateThumbnailUrl = (url) => {
+const decodeHtmlEntities = (str) => {
+  const textArea = document.createElement('textarea');
+  textArea.innerHTML = str;
+  return textArea.value;
+};
+
+function updateThumbnailUrl(url) {
   const urlObj = new URL(url);
   urlObj.searchParams.set('image_crop_resized', '480x270');
   return urlObj.toString();
-};
+}
 
 const fetchMediaCount = () => {
   fetch('https://api.wistia.com/v1/account.json', options)
@@ -177,7 +183,7 @@ const fetchData = (page) => {
           const nameLink = document.createElement('a');
           nameLink.href = `https://contentful.wistia.com/medias/${jsonData.hashed_id}`;
           nameLink.target = '_blank';
-          nameLink.textContent = jsonData.name;
+          nameLink.textContent = decodeHtmlEntities(jsonData.name); // decodes HTML entities in title strings
           nameLink.classList.add(
             'text-blue-500',
             'dark:text-blue-300',
