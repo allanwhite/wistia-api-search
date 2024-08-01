@@ -232,7 +232,8 @@ const fetchData = (page) => {
             'px-4',
             'border-b',
             'border-gray-300',
-            'dark:border-gray-700'
+            'dark:border-gray-700',
+            'desc'
           );
           // if (jsonData.description.length > 256) {
           //     descriptionCell.classList.add('truncate', 'max-w-lg');

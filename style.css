@@ -18,3 +18,6 @@ body {
   font-style: normal;
   /* color: hsl(77.87deg 44.3% 58.84%); */
 }
+.desc p {
+  max-width: 65ch;
+}
